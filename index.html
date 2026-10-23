@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Turn one square PNG into a complete set of favicons, touch icons and a web manifest. Private, free and dependency-free.">
+  <meta name="theme-color" content="#eaece7">
+  <title>Favicon Kit | PNG &ShortRightArrow; Favicon</title>
+  <link rel="icon" type="image/svg+xml" href="./mark.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Favicon Kit home"><span class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>FAVICON<span class="brand-light"> / KIT</span></span></a>
+      <a class="github-link" href="https://github.com/Raeid-U/favicon-kit" target="_blank" rel="noopener noreferrer" title="Create your own GitHub repository">Repository ↗</a>
+    </header>
+    <main>
+      <div class="workspace">
+        <section class="input-side" aria-labelledby="source-title">
+          <div class="section-top"><span class="step">01</span><h2 id="source-title">Source image</h2><button id="reset" type="button" class="text-button" hidden>Clear &circlearrowleft;</button></div>
+          <label class="drop-area" id="drop-area" for="file-input">
+            <input id="file-input" type="file" accept="image/png,.png" aria-label="Choose a square PNG image">
+            <span class="drop-symbol" aria-hidden="true">↥</span>
+            <img id="preview" class="source-preview pixel-art" alt="Preview of uploaded PNG">
+            <strong id="drop-title">Drop a square PNG here</strong>
+            <span id="drop-details">or click to browse · PNG up to 10 MB</span>
+            <span class="filename" id="filename"></span>
+          </label>
+          <div class="meta-line"><span id="image-meta">No image selected</span><span>Private by design</span></div>
+          <div class="settings-title"><span class="step">02</span><h2>Set the details</h2></div>
+          <div class="fields">
+            <label class="field"><span>App name</span><input id="app-name" value="My Website" maxlength="80" placeholder="My Website" spellcheck="false"></label>
+            <label class="field"><span>Short name</span><input id="short-name" value="" maxlength="32" placeholder="Optional" spellcheck="false"></label>
+          </div>
+          <div class="fields color-fields">
+            <label class="field"><span>Theme color</span><span class="color-control"><input id="theme-color" type="color" value="#152620"><span>Browser chrome</span></span></label>
+            <label class="field"><span>Background</span><span class="color-control"><input id="background-color" type="color" value="#ffffff"><span>Manifest only</span></span></label>
+          </div>
+          <div class="render-setting">
+            <div><strong>Resize mode</strong><p>Preserve pixels or smooth edges.</p></div>
+            <div class="switch-group" role="group" aria-label="Resize mode"><button id="pixel-mode" aria-pressed="true" type="button">Pixel sharp</button><button id="smooth-mode" aria-pressed="false" type="button">Smooth</button></div>
+          </div>
+          <button id="download" class="download-button" type="button" disabled>Download favicon kit <span aria-hidden="true">↗</span></button>
+          <div id="status" class="status" role="status" aria-live="polite"></div>
+        </section>
+        <section class="output-side" aria-labelledby="preview-title">
+          <div class="section-top"><span class="step">03</span><h2 id="preview-title">Preview and export</h2><span class="quiet">10 files</span></div>
+          <div class="preview-stage">
+            <div class="browser-preview"><div class="browser-bar"><i></i><i></i><i></i></div><div class="browser-tab"><img id="preview-browser" class="pixel-art" alt="32 pixel browser favicon preview"><span id="browser-title">My Website</span><span class="x-mark">×</span></div></div>
+            <div class="preview-size-grid">
+              <div class="preview-unit"><div class="checker large"><img id="preview-touch" class="pixel-art" alt="180 pixel touch icon preview"></div><span>180 × 180 <small>APPLE TOUCH</small></span></div>
+              <div class="preview-unit"><div class="checker small"><img id="preview-small" class="pixel-art" alt="32 pixel favicon preview"></div><span>32 × 32 <small>BROWSER TAB</small></span></div>
+              <div class="preview-unit"><div class="checker mini"><img id="mini-preview" class="pixel-art" alt="16 pixel favicon preview"></div><span>16 × 16 <small>SMALL ICON</small></span></div>
+            </div>
+          </div>
+          <div class="package-heading">INCLUDED IN YOUR ZIP <span>01—10</span></div>
+          <ul class="file-list">
+            <li><span>favicon.ico</span><small>16 / 32 / 48 px</small></li>
+            <li><span>favicon-16x16.png</span><small>PNG</small></li>
+            <li><span>favicon-32x32.png</span><small>PNG</small></li>
+            <li><span>favicon-48x48.png</span><small>PNG</small></li>
+            <li><span>apple-touch-icon.png</span><small>180 px</small></li>
+            <li><span>android-chrome-192x192.png</span><small>192 px</small></li>
+            <li><span>android-chrome-512x512.png</span><small>512 px</small></li>
+            <li><span>site.webmanifest</span><small>JSON</small></li>
+            <li><span>HEAD_SNIPPET.html + README.txt</span><small>SETUP</small></li>
+          </ul>
+          <div class="snippet-head"><span>HTML / HEAD SNIPPET</span><button type="button" class="text-button" id="copy-snippet">Copy ↗</button></div>
+          <pre class="snippet" id="snippet"></pre>
+        </section>
+      </div>
+    </main>
+    <footer><span>FAVICON / KIT</span><span>CRAFTED FOR THE LITTLE DETAILS · 2026</span></footer>
+  </div>
+</body>
+</html>
